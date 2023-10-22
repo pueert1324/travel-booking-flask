@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Hotels</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+            padding: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Hotels</h1>
+    <ul>
+        {% for hotel in hotels %}
+            <li>
+                <a href="/book/hotel/{{ hotel.hotel_id }}">
+                    {{ hotel.name }} in {{ hotel.location }} - ${{ hotel.price_per_night }} per night
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
